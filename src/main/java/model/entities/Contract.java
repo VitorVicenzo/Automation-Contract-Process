@@ -1,6 +1,7 @@
 package model.entities;
 
 import java.util.Date;
+import java.util.List;
 
 public class Contract {
 
@@ -8,12 +9,20 @@ public class Contract {
     private Date date;
     private Double totalValue;
 
-    private Installment installments;
+    private Installment[] installments;
 
-    public Contract(Integer number, Date date, Double totalValue, Installment installments) {
+    public Contract(Integer number, Date date, Double totalValue, Installment[] installments) {
         this.number = number;
         this.date = date;
         this.totalValue = totalValue;
+        this.installments = installments;
+    }
+
+    public Installment[] getInstallments() {
+        return installments;
+    }
+
+    public void setInstallments(Installment[] installments) {
         this.installments = installments;
     }
 
@@ -41,13 +50,7 @@ public class Contract {
         this.totalValue = totalValue;
     }
 
-    public Installment getInstallments() {
-        return installments;
-    }
-
-    public void setInstallments(Installment installments) {
-        this.installments = installments;
-    }
+    
 
     
 }
